@@ -1,0 +1,22 @@
+{
+  "name": "bs-theme",
+  "version": "0.0.0",
+  "homepage": "https://github.com/aino/bs-theme",
+  "authors": [
+    "Aino AB"
+  ],
+  "main": "index.html",
+  "license": "Copyright",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ],
+  "dependencies": {
+    "es5-shim": "~2.1.0",
+    "jquery": "~1.11.1",
+    "html5shiv": "~3.7.0",
+    "font-awesome": "~4.0.3",
+    "bootstrap": "~3.1.1"
+  }
+}
