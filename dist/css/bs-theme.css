@@ -5772,6 +5772,6 @@ button.close {
     display: none !important;
   }
 }
-html {
+body {
   -webkit-font-smoothing: antialiased;
 }

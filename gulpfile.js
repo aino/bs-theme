@@ -1,17 +1,29 @@
 var gulp = require('gulp')
 var less = require('gulp-less')
-var minify = require('gulp-minify-css')
-var es = require('event-stream')
-var path = require('path')
 var rename = require('gulp-rename')
+var watch = require('gulp-watch')
+var util = require('gulp-util')
+var http = require('http')
+var ecstatic = require('ecstatic')
 
-gulp.task('less', function() {
-  console.log('LESS')
+var task = {}
+
+task.less = function() {
   gulp.src('./less/bs-theme.less')
     .pipe(less())
-    .on('error', function(e) {
-      console.dir(e)
-    })
     .pipe(rename('bs-theme.css'))
     .pipe(gulp.dest('./dist/css'));
+}
+
+task.watch = function() {
+  watch({glob: './less/**/*.less'}, function() { task.less() })
+}
+
+gulp.task( 'default', function() {
+  http.createServer(
+    ecstatic({ root: __dirname, autoIndex: true })
+  ).listen(8000);
+  util.log('Listening on :8000');
+  task.less()
+  task.watch()
 })

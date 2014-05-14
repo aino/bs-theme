@@ -1,2 +1,2 @@
 #!/bin/bash
-python -m SimpleHTTPServer
+node ./node_modules/.bin/gulp --progress --colors
