@@ -9,9 +9,9 @@ var ecstatic = require('ecstatic')
 var task = {}
 
 task.less = function() {
-  gulp.src('./less/bs-theme.less')
+  gulp.src('./less/theme.less')
     .pipe(less())
-    .pipe(rename('bs-theme.css'))
+    .pipe(rename('theme.css'))
     .pipe(gulp.dest('./dist/css'));
 }
 
@@ -22,8 +22,8 @@ task.watch = function() {
 gulp.task( 'default', function() {
   http.createServer(
     ecstatic({ root: __dirname, autoIndex: true })
-  ).listen(8000);
-  util.log('Listening on :8000');
+  ).listen(8000)
+  util.log('Listening on :8000')
   task.less()
   task.watch()
 })
