@@ -1,0 +1,39 @@
+.btn{
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  font-weight:500;
+  .button-size(@padding-large-vertical; @padding-xl-horizontal; @font-size-small; @line-height-base; @border-radius-small);
+
+  &:hover,
+  &:focus {
+    border-color: @btn-default-color;
+    text-decoration: none;
+  }
+}
+
+.btn-default {
+  .button-variant(@btn-default-color; @btn-default-bg; @btn-default-color);
+}
+.btn-primary {
+  .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-color);
+  &:hover,
+  &:focus {
+    border-color: @btn-primary-color;
+  }
+}
+// Success appears as green
+.btn-success {
+  .button-variant(@btn-success-color; @btn-success-bg; @btn-success-color);
+}
+// Info appears as blue-green
+.btn-info {
+  .button-variant(@btn-info-color; @btn-info-bg; @btn-info-color);
+}
+// Warning appears as orange
+.btn-warning {
+  .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-color);
+}
+// Danger and error appear as red
+.btn-danger {
+  .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-color);
+}
